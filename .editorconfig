@@ -1,0 +1,16 @@
+[*.{js,jsx,ts,tsx,vue,yml,json}]
+trim_trailing_whitespace = true
+end_of_line = lf
+insert_final_newline = true
+
+[*.yml]
+indent_style = space
+indent_size = 4
+
+[*.json]
+indent_style = tab
+indent_size = 4
+
+[*.{js,jsx,ts,tsx}]
+indent_style = tab
+indent_size = 4

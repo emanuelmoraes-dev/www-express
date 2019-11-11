@@ -1,0 +1,37 @@
+{
+  "name": "@emanuelmoraes-dev/www-express",
+  "version": "1.0.0",
+  "description": "Simple utility that provides a function that loads a js express application",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "cross-env DEBUG=example:* ts-node examples/server.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emanuelmoraes-dev/www-express.git"
+  },
+  "keywords": [
+    "express",
+    "server",
+    "www"
+  ],
+  "author": "emanuelmoraes-dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emanuelmoraes-dev/www-express/issues"
+  },
+  "homepage": "https://github.com/emanuelmoraes-dev/www-express#readme",
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "ts-node": "^8.5.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.7",
+    "debug": "^4.1.1",
+    "express": "^4.17.1"
+  }
+}
