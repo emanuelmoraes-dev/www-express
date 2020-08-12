@@ -8,11 +8,11 @@ Simple utility that provides a function that loads a express js application with
 
 ```js
 import express from 'express'
-import fdebug from 'debug'
-import www from '../src/index'
+import www from 'www-express'
+import fdebug from 'debug' // optional
 
 const app = express()
-const debug = fdebug('example:server')
+const debug = fdebug('example:server') // optional
 
 app.get('/', (_, res) => {
 	res.status(200).write('wellcome')
