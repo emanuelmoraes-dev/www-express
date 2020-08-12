@@ -1,7 +1,7 @@
 {
-  "name": "@emanuelmoraes-dev/www-express",
+  "name": "www-express",
   "version": "1.0.0",
-  "description": "Simple utility that provides a function that loads a js express application",
+  "description": "Simple utility that provides a function that loads a express js application with JavaScript/TypeScript",
   "main": "dist/index.js",
   "scripts": {
     "dev": "cross-env DEBUG=example:* ts-node examples/server.ts",

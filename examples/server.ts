@@ -1,13 +1,14 @@
 import express from 'express'
-import _debug from 'debug'
+import fdebug from 'debug'
 import www from '../src/index'
 
 const app = express()
-const debug = _debug('example:server')
+const debug = fdebug('example:server')
 
 app.get('/', (_, res) => {
 	res.status(200).write('wellcome')
 	res.end()
 })
 
+// "debug" can be null
 www(app, debug)

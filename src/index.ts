@@ -92,6 +92,7 @@ function onListening(server: Server, debug: debug.Debugger, resolve: Resolve) {
 	var bind = typeof addr === 'string'
 		? 'pipe ' + addr
 		: 'port ' + addr.port
-	debug('Listening on ' + bind)
+	if (typeof debug === 'function')
+		debug('Listening on ' + bind)
 	resolve()
 }

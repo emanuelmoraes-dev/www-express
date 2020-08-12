@@ -126,6 +126,7 @@ function onListening(server, debug, resolve) {
     var bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
-    debug('Listening on ' + bind);
+    if (typeof debug === 'function')
+        debug('Listening on ' + bind);
     resolve();
 }
