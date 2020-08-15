@@ -1,6 +1,5 @@
 import http from 'http'
 import https from 'https'
-import debug from 'debug'
 import { Express } from 'express-serve-static-core'
 
 type Reject = (reason?: any) => void
@@ -10,10 +9,10 @@ type Server = http.Server | https.Server
 /**
  * boot server
  * @param {Express} app - Express instance
- * @param {debug.Debugger} - debug function
+ * @param {Function} - debug function
  * @param {boolean=} security - if true, https will be used instead of http. Default value: false
  */
-export default async (app: Express, debug: debug.Debugger, security: boolean = false) => new Promise((resolve: Resolve, reject: Reject) => {
+export default async (app: Express, debug: Function, security: boolean = false) => new Promise((resolve: Resolve, reject: Reject) => {
 	const port = normalizePort(process.env.PORT || '3000')
 	app.set('port', port)
 
@@ -84,10 +83,10 @@ function onError(error: any, port: any, reject: Reject) {
 /**
  * Event listener for HTTP server "listening" event.
  * @param {http.Server | https.Server} server - http or https server instance
- * @param {debug.Debugger} debug - debug function
+ * @param {Function} debug - debug function
  * @param {(value?: unknown) => void} resolve - Promise Acceptance Function
  */
-function onListening(server: Server, debug: debug.Debugger, resolve: Resolve) {
+function onListening(server: Server, debug: Function, resolve: Resolve) {
 	var addr = server.address()
 	var bind = typeof addr === 'string'
 		? 'pipe ' + addr

@@ -2,17 +2,45 @@
 
 Simple utility that provides a function that loads a express js application with JavaScript/TypeScript
 
-## Example
+## Examples
 
-### Code
+### Simple Example
 
 ```js
 import express from 'express'
 import www from 'www-express'
-import fdebug from 'debug' // optional
 
 const app = express()
+
+app.get('/', (_, res) => {
+	res.status(200).write('wellcome')
+	res.end()
+})
+
+// the second argument (debug function) can be null
+www(app, console.log)
+```
+
+### Most Complete Example
+
+```js
+import express from 'express'
+import www from 'www-express'
+
+import fdebug from 'debug' // optional
+import path from 'path' // optional
+import cookieParser from 'cookie-parser' // optional
+import logger from 'morgan' // optional
+
+const app = express()
+
 const debug = fdebug('example:server') // optional
+
+app.use(logger('dev')) // optional
+app.use(express.json()) // optional
+app.use(express.urlencoded({ extended: false })) // optional
+app.use(cookieParser()) // optional
+app.use(express.static(path.join(__dirname, 'public'))) // optional
 
 app.get('/', (_, res) => {
 	res.status(200).write('wellcome')
@@ -41,13 +69,13 @@ PORT=3001 node example.js
 set PORT=3001 & node example.js
 ```
 
-### Run With Debug (Unix Like)
+### Run With Debug Package (Unix Like)
 
 ```sh
 DEBUG=example:* node example.js
 ```
 
-### Run With Debug (Windows)
+### Run With Debug Package (Windows)
 
 ```sh
 set DEBUG=example:* & node example.js
