@@ -21,5 +21,5 @@ app.get('/', (_, res) => {
 	res.end()
 })
 
-// "debug" can be null
+// "debug" is optional (default value: null)
 www(app, debug)

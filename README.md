@@ -17,8 +17,7 @@ app.get('/', (_, res) => {
 	res.end()
 })
 
-// the second argument (debug function) can be null
-www(app, console.log)
+www(app)
 ```
 
 ### Most Complete Example
@@ -47,7 +46,7 @@ app.get('/', (_, res) => {
 	res.end()
 })
 
-// "debug" can be null
+// "debug" is optional (default value: null)
 www(app, debug)
 ```
 

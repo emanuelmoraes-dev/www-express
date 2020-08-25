@@ -9,10 +9,10 @@ type Server = http.Server | https.Server
 /**
  * boot server
  * @param {Express} app - Express instance
- * @param {Function} - debug function
+ * @param {Function=} - debug function
  * @param {boolean=} security - if true, https will be used instead of http. Default value: false
  */
-export default async (app: Express, debug: Function, security: boolean = false) => new Promise((resolve: Resolve, reject: Reject) => {
+export default async (app: Express, debug: Function = null, security: boolean = false) => new Promise((resolve: Resolve, reject: Reject) => {
 	const port = normalizePort(process.env.PORT || '3000')
 	app.set('port', port)
 
