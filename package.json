@@ -1,6 +1,6 @@
 {
   "name": "www-express",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Simple utility that provides a function that loads a express js application with JavaScript/TypeScript",
   "main": "dist/index.js",
   "scripts": {
