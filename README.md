@@ -8,7 +8,7 @@ Simple utility that provides a function that loads a express js application with
 
 ```js
 import express from 'express'
-import www from 'www-express'
+import { www } from 'www-express'
 
 const app = express()
 
@@ -24,7 +24,7 @@ www(app)
 
 ```js
 import express from 'express'
-import www from 'www-express'
+import { www } from 'www-express'
 
 import fdebug from 'debug' // optional
 import path from 'path' // optional

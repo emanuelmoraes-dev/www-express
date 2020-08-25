@@ -1,5 +1,5 @@
 import express from 'express'
-import www from '../src/index'
+import { www } from '../src/index'
 
 import fdebug from 'debug' // optional
 import path from 'path' // optional
