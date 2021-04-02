@@ -1,6 +1,6 @@
 {
   "name": "www-express",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple utility that provides a function that loads a express js application with JavaScript/TypeScript",
   "main": "dist/index.js",
   "scripts": {
@@ -25,7 +25,9 @@
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",
     "@types/debug": "^4.1.5",
+    "@types/express": "^4.17.2",
     "@types/morgan": "^1.9.1",
+    "@types/node": "^12.12.7",
     "cookie-parser": "^1.4.5",
     "cross-env": "^6.0.3",
     "debug": "^4.1.1",
@@ -33,10 +35,6 @@
     "morgan": "^1.10.0",
     "ts-node": "^8.5.0",
     "typescript": "^3.7.2"
-  },
-  "dependencies": {
-    "@types/express": "^4.17.2",
-    "@types/node": "^12.12.7"
   },
   "private": false
 }
