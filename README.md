@@ -17,7 +17,7 @@ app.get('/', (_, res) => {
 	res.end()
 })
 
-www(app)
+www(app).catch(console.error)
 ```
 
 ### Most Complete Example
@@ -47,7 +47,7 @@ app.get('/', (_, res) => {
 })
 
 // "debug" is optional (default value: null)
-www(app, debug)
+www(app).catch(console.error)
 ```
 
 ### Run (Deafult Port: 3000)
