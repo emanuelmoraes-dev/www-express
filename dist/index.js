@@ -120,7 +120,7 @@ function onError(error, port, reject) {
  * Event listener for HTTP server "listening" event.
  * @param {http.Server | https.Server} server - http or https server instance
  * @param {Function} debug - debug function
- * @param {(value?: unknown) => void} resolve - Promise Acceptance Function
+ * @param {(value?: void) => void} resolve - Promise Acceptance Function
  */
 function onListening(server, debug, resolve) {
     var addr = server.address();

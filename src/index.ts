@@ -3,8 +3,9 @@ import https from 'https'
 import { Express } from 'express-serve-static-core'
 
 type Reject = (reason?: any) => void
-type Resolve = (value?: unknown) => void
+type Resolve = (value?: void) => void
 type Server = http.Server | https.Server
+type WWW = (app: Express, debug?: Function, security?: boolean) => Promise<void>
 
 /**
  * boot server
@@ -12,7 +13,7 @@ type Server = http.Server | https.Server
  * @param {Function=} - debug function
  * @param {boolean=} security - if true, https will be used instead of http. Default value: false
  */
-export const www = async (app: Express, debug: Function = null, security: boolean = false) => new Promise((resolve: Resolve, reject: Reject) => {
+export const www: WWW = async (app: Express, debug: Function = null, security: boolean = false) => new Promise((resolve: Resolve, reject: Reject) => {
 	const port = normalizePort(process.env.PORT || '3000')
 	app.set('port', port)
 
@@ -84,7 +85,7 @@ function onError(error: any, port: any, reject: Reject) {
  * Event listener for HTTP server "listening" event.
  * @param {http.Server | https.Server} server - http or https server instance
  * @param {Function} debug - debug function
- * @param {(value?: unknown) => void} resolve - Promise Acceptance Function
+ * @param {(value?: void) => void} resolve - Promise Acceptance Function
  */
 function onListening(server: Server, debug: Function, resolve: Resolve) {
 	var addr = server.address()
